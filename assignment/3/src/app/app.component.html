@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ol>
+                <li>Add A button which says 'Display Details'</li>
+                <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
+                <li>Toggle the displaying of that paragraph with the button created in the first step</li>
+                <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
+                <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="toggleMessage()"> Display Details</button>
+            <br>
+
+            <p *ngIf="showMessage"> Prashant is learning angular 6</p>
+            <br>
+            <p>How many times display button is clicked?</p>
+            <br>
+            <ul>
+                <li *ngFor="let click of clickLog" [ngStyle]="{'background-color': (click >=5) ? blue: 'white' }" [ngClass]="{'white-label': (click >= 5)}">{{ 'This is click '+ click}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
